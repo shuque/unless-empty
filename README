@@ -1,0 +1,14 @@
+unless_empty
+
+If the standard input to this scirpt is non-empty it runs a specified
+command line feeding out standard input to its standard input. Based
+on an earlier script by ex-colleague Mark Levinson that predated the
+python subprocess module.
+
+    Usage: unless_empty command [args ...]
+
+This is handy for use in cron jobs like the following:
+
+check_something | unless_empty mailx -s 'something is wrong' user
+
+--Shumon Huque
